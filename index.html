@@ -1,127 +1,291 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programme FitExpress - ATLAS FORMATION</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATLAS FORMATION — Programme Fit Express</title>
+  <meta name="description" content="Programme Fit Express par ATLAS FORMATION : plan d'entraînement rapide, nutrition simple, résultats concrets. Prix : 20 000 FCFA." />
+  <meta property="og:title" content="ATLAS FORMATION — Fit Express" />
+  <meta property="og:description" content="Rejoignez Fit Express : entraînements rapides, nutrition claire, coaching. 20 000 FCFA." />
+  <meta property="og:type" content="website" />
+  <meta name="format-detection" content="telephone=no" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+    :root{
+      --bg:#0b1220;--card:#111a2b;--muted:#7e8aa3;--brand:#31c48d;--brand-2:#22d3ee;--text:#e6eefc;--accent:#ffd166;--danger:#ff6b6b;
     }
-    header {
-      background: #28a745;
-      color: #fff;
-      padding: 30px 15px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-    header p {
-      margin: 10px 0 0;
-      font-size: 1.2em;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    .card {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .price {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #28a745;
-      margin: 15px 0;
-    }
-    form input, form button {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1em;
-    }
-    form button {
-      background: #28a745;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    form button:hover {
-      background: #218838;
-    }
-    .btn-whatsapp {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-    .btn-whatsapp:hover {
-      background: #1ebd5a;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #333;
-      color: white;
-      margin-top: 30px;
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1220,#0b1220 40%,#0d1426);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1080px;padding:24px;margin:0 auto}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(6px);background:rgba(11,18,32,.7);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:700;letter-spacing:.2px}
+    .brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand-2))}
+    .tag{font-size:12px;padding:2px 8px;border:1px solid rgba(255,255,255,.12);border-radius:999px;color:var(--muted)}
+    .nav a.btn{padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.12);transition:all .2s}
+    .nav a.btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,.24)}
+    .hero{padding:56px 0 24px}
+    .grid{display:grid;gap:18px}
+    @media(min-width:900px){.hero-grid{grid-template-columns:1.2fr .8fr}}
+    .card{background:linear-gradient(180deg,#0e1628,#0b1324);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px}
+    h1{font-size:clamp(28px,4vw,44px);line-height:1.1;margin:0}
+    .lead{color:var(--muted);font-size:clamp(16px,2.2vw,18px)}
+    .price{display:flex;align-items:baseline;gap:10px;margin:10px 0 4px}
+    .price .now{font-weight:800;font-size:28px;background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.12);cursor:pointer;transition:transform .15s,box-shadow .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b1220;border:none;font-weight:700}
+    .btn-outline{background:transparent;color:var(--text)}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .badge{font-size:12px;padding:6px 10px;border-radius:999px;border:1px dashed rgba(255,255,255,.18);color:var(--muted)}
+    .section{padding:24px 0}
+    .features{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .feat h3{margin:0 0 6px;font-size:18px}
+    .feat p{margin:0;color:var(--muted);font-size:14px}
+    .highlight{border-left:3px solid var(--brand);padding-left:12px}
+    form{display:grid;gap:10px}
+    .row{display:grid;gap:10px}
+    @media(min-width:680px){.row{grid-template-columns:1fr 1fr}}
+    label{font-size:13px;color:var(--muted)}
+    input,select,textarea{width:100%;padding:12px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:#0a1324;color:var(--text);outline:none}
+    input:focus,textarea:focus{border-color:var(--brand)}
+    .muted{color:var(--muted);font-size:13px}
+    .kpis{grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+    .kpi{padding:16px;border-radius:16px;background:linear-gradient(180deg,#0c1628,#0a1324);border:1px solid rgba(255,255,255,.06);text-align:center}
+    .kpi b{font-size:22px;display:block;margin-bottom:4px}
+    .faq details{background:linear-gradient(180deg,#0e1628,#0a1221);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px}
+    .faq summary{cursor:pointer;font-weight:600}
+    footer{padding:32px 0;color:var(--muted)}
+    .foot-grid{display:grid;gap:16px}
+    @media(min-width:800px){.foot-grid{grid-template-columns:1fr 1fr}}
+    .success{display:none;margin-top:8px;padding:10px;border-radius:10px;background:rgba(49,196,141,.12);border:1px solid rgba(49,196,141,.45);color:#b8ffe2}
+    .error{display:none;margin-top:8px;padding:10px;border-radius:10px;background:rgba(255,107,107,.12);border:1px solid rgba(255,107,107,.45);color:#ffd8d8}
+    .tiny{font-size:12px;color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
-    <h1>Programme FitExpress</h1>
-    <p>Un programme unique pour transformer votre corps, même avec un emploi du temps chargé.</p>
+    <div class="container nav">
+      <div class="brand">
+        <span class="brand-badge">🏷️</span>
+        <span>ATLAS FORMATION</span>
+        <span class="tag">Fit Express</span>
+      </div>
+      <nav class="nav">
+        <a href="#programme" class="btn">Programme</a>
+        <a href="#inscription" class="btn">Inscription</a>
+        <a href="#paiement" class="btn">Paiement</a>
+        <a href="#contact" class="btn btn-primary">WhatsApp</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="container">
-    <div class="card">
-      <h2>Présentation</h2>
-      <p>
-        FitExpress est conçu pour les personnes actives qui veulent garder la forme sans perdre de temps. 
-        Avec nos exercices rapides et efficaces, vous pouvez rester en bonne santé où que vous soyez.
-      </p>
-      <p class="price">Prix : 20 000 FCFA</p>
-    </div>
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="grid hero-grid">
+        <div class="card">
+          <h1>Programme <span class="highlight">Fit Express</span> — ATLAS FORMATION</h1>
+          <p class="lead">Des séances rapides, une nutrition simple et un accompagnement clair pour des résultats concrets — même avec un planning chargé.</p>
+          <div class="price"><span class="now">20 000 FCFA</span><span class="muted">paiement unique</span></div>
+          <div class="cta-row">
+            <a href="#inscription" class="btn btn-primary">Je m’inscris</a>
+            <a href="https://wa.me/242065814431?text=Bonjour%20ATLAS%20FORMATION%2C%20je%20souhaite%20m%E2%80%99inscrire%20au%20programme%20Fit%20Express." class="btn btn-outline">Discuter sur WhatsApp</a>
+          </div>
+          <div class="badges">
+            <span class="badge">⏱️ 20–25 min/séance</span>
+            <span class="badge">📅 Plan sur 4 semaines</span>
+            <span class="badge">🍽️ Guide nutrition</span>
+            <span class="badge">🎧 Coaching audio</span>
+          </div>
+        </div>
+        <div class="card">
+          <h2 style="margin:0 0 10px;">Ce que vous obtenez</h2>
+          <ul class="muted" style="margin:0 0 8px 18px;">
+            <li>Programme fractionné (full body, cardio, core)</li>
+            <li>Vidéos explicatives courtes</li>
+            <li>Plan nutrition simple & ajustable</li>
+            <li>Suivi hebdomadaire & checklist PDF</li>
+            <li>Certificat de participation (optionnel)</li>
+          </ul>
+          <div class="kpis grid kpis">
+            <div class="kpi"><b>4</b><span>semaines</span></div>
+            <div class="kpi"><b>5</b><span>séances / semaine</span></div>
+            <div class="kpi"><b>25</b><span>min / séance</span></div>
+            <div class="kpi"><b>100%</b><span>à domicile</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2>Inscription</h2>
-      <form>
-        <input type="text" placeholder="Nom" required>
-        <input type="text" placeholder="Prénom" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Téléphone" required>
-        <button type="submit">Je m'inscris</button>
-      </form>
-    </div>
+    <!-- PROGRAMME -->
+    <section id="programme" class="section">
+      <div class="grid features">
+        <div class="card feat">
+          <h3>Entraînements rapides</h3>
+          <p>HIIT, renforcement, mobilité. Aucun matériel obligatoire, variantes débutant à avancé.</p>
+        </div>
+        <div class="card feat">
+          <h3>Nutrition simple</h3>
+          <p>Portions visuelles, liste de courses locale, exemples de menus, hydratation & sommeil.</p>
+        </div>
+        <div class="card feat">
+          <h3>Motivation & suivi</h3>
+          <p>Checklist hebdo, rappels et conseils pratiques pour garder le cap.</p>
+        </div>
+        <div class="card feat">
+          <h3>ATLAS FORMATION</h3>
+          <p>Une pédagogie claire, des supports propres et un accompagnement accessible.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="card" style="text-align:center;">
-      <h2>Rejoignez-nous</h2>
-      <a href="https://wa.me/242065814431?text=Bonjour%2C%20je%20veux%20m'inscrire%20au%20Programme%20FitExpress%20-%20ATLAS%20FORMATION" class="btn-whatsapp">
-        💬 Rejoignez-nous sur WhatsApp
-      </a>
-    </div>
-  </div>
+    <!-- INSCRIPTION -->
+    <section id="inscription" class="section">
+      <div class="card">
+        <h2 style="margin-top:0;">Inscription — Fit Express</h2>
+        <p class="muted">Remplissez le formulaire. Vous recevrez la confirmation par email / WhatsApp.</p>
+
+        <form id="signupForm">
+          <div class="row">
+            <div>
+              <label for="prenom">Prénom</label>
+              <input id="prenom" name="prenom" required placeholder="Votre prénom" />
+            </div>
+            <div>
+              <label for="nom">Nom</label>
+              <input id="nom" name="nom" required placeholder="Votre nom" />
+            </div>
+          </div>
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="ex: nom@email.com" />
+            </div>
+            <div>
+              <label for="telephone">Téléphone (WhatsApp)</label>
+              <input id="telephone" name="telephone" inputmode="tel" required placeholder="+242 06 xx xx xxx" />
+            </div>
+          </div>
+          <div>
+            <label for="objectif">Votre objectif</label>
+            <input id="objectif" name="objectif" placeholder="ex : perte de poids, tonification…" />
+          </div>
+
+          <button class="btn btn-primary" type="submit">Valider mon inscription</button>
+          <div id="ok" class="success">✅ Inscription envoyée. Nous vous contactons sous peu.</div>
+          <div id="ko" class="error">❌ Une erreur est survenue. Merci de réessayer.</div>
+          <p class="tiny">En validant, vous acceptez d’être recontacté(e) par ATLAS FORMATION (email / WhatsApp) pour finaliser l’accès.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- PAIEMENT -->
+    <section id="paiement" class="section">
+      <div class="card">
+        <h2 style="margin-top:0;">Paiement Mobile Money (MTN)</h2>
+        <p class="muted">Montant : <b>20 000 FCFA</b>. Choisissez l’option qui vous convient :</p>
+        <ol class="muted">
+          <li><b>WhatsApp direct :</b> cliquez ci-dessous, nous vous envoyons la demande de paiement sécurisée.</li>
+          <li><b>Transfert manuel :</b> indiquez “Fit Express – ATLAS FORMATION” en référence, puis envoyez le reçu sur WhatsApp.</li>
+        </ol>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://wa.me/242065814431?text=Bonjour%20ATLAS%20FORMATION%2C%20je%20souhaite%20proc%C3%A9der%20au%20paiement%20Mobile%20Money%20pour%20Fit%20Express%20(20%20000%20FCFA).">Payer maintenant sur WhatsApp</a>
+          <a class="btn btn-outline" href="#contact">Support paiement</a>
+        </div>
+        <p class="tiny">Astuce : après paiement, l’accès au dossier (vidéos + supports) est transmis automatiquement par email/WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq">
+      <div class="grid">
+        <details class="card">
+          <summary>Combien de temps avant les premiers résultats ?</summary>
+          <p class="muted">En général 10 à 14 jours si vous suivez les séances et le guide nutritionnel.</p>
+        </details>
+        <details class="card">
+          <summary>Ai-je besoin de matériel ?</summary>
+          <p class="muted">Non. Un tapis est recommandé. Des options avec haltères légers sont proposées.</p>
+        </details>
+        <details class="card">
+          <summary>Le certificat est-il inclus ?</summary>
+          <p class="muted">Oui, un certificat de participation ATLAS FORMATION est disponible en fin de programme.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="foot-grid">
+        <div class="card">
+          <h3 style="margin-top:0;">Contacter ATLAS FORMATION</h3>
+          <p class="muted">Nous répondons rapidement sur WhatsApp et par email.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://wa.me/242065814431?text=Bonjour%20ATLAS%20FORMATION%2C%20j%E2%80%99ai%20une%20question%20sur%20Fit%20Express.">WhatsApp</a>
+            <a class="btn btn-outline" href="mailto:bingamoussavouernest@gmail.com?subject=Fit%20Express%20-%20ATLAS%20FORMATION">Email</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;">Informations</h3>
+          <ul class="muted" style="margin:0 0 0 18px;">
+            <li>ATLAS FORMATION — Programme Fit Express</li>
+            <li>Prix : 20 000 FCFA (paiement unique)</li>
+            <li>Accès : vidéos + guide PDF + suivi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 ATLAS FORMATION - Tous droits réservés
+    <div class="container" style="text-align:center">
+      © <span id="year"></span> ATLAS FORMATION — Tous droits réservés.
+    </div>
   </footer>
+
+  <script>
+    // Année dynamique
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Soumission du formulaire : envoi par email (mailto) + message WhatsApp pré-rempli
+    const form = document.getElementById('signupForm');
+    const ok = document.getElementById('ok');
+    const ko = document.getElementById('ko');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      ok.style.display = 'none';
+      ko.style.display = 'none';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      const sujet = 'Inscription — Fit Express (ATLAS FORMATION)';
+      const corps =
+        `Nouvelle inscription Fit Express%0D%0A%0D%0A`+
+        `Prénom: ${encodeURIComponent(data.prenom)}%0D%0A`+
+        `Nom: ${encodeURIComponent(data.nom)}%0D%0A`+
+        `Email: ${encodeURIComponent(data.email)}%0D%0A`+
+        `Téléphone: ${encodeURIComponent(data.telephone)}%0D%0A`+
+        `Objectif: ${encodeURIComponent(data.objectif||'—')}%0D%0A`;
+
+      // Email (ouvre le client mail du visiteur)
+      const mailto = `mailto:bingamoussavouernest@gmail.com?subject=${encodeURIComponent(sujet)}&body=${corps}`;
+      window.location.href = mailto;
+
+      // WhatsApp (pré-rempli pour suivre plus vite sur mobile)
+      const wamsg =
+        `Bonjour ATLAS FORMATION, je viens de m'inscrire au programme Fit Express.%0A`+
+        `Nom: ${encodeURIComponent(data.prenom)}%20${encodeURIComponent(data.nom)}%0A`+
+        `Email: ${encodeURIComponent(data.email)}%0A`+
+        `Téléphone: ${encodeURIComponent(data.telephone)}%0A`+
+        `Objectif: ${encodeURIComponent(data.objectif||'—')}`;
+      const wa = `https://wa.me/242065814431?text=${wamsg}`;
+
+      // Affiche succès + ouvre WhatsApp dans un nouvel onglet (si possible)
+      ok.style.display = 'block';
+      setTimeout(()=>{ window.open(wa, '_blank'); }, 400);
+    });
+  </script>
 </body>
 </html>
